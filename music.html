@@ -33,7 +33,10 @@
 		Spotify soundboard
 	</h1>
 	<div id="row 1">
-		<iframe id="spot1" src="" width="250" height="90" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+		<div>
+			<input id="vol-control" type="range" min="0" max="100" step="1" oninput="thisVolume(this.value)" onchange="thisVolume(this.value)"></input>
+			<iframe id="spot1" src="" width="250" height="90" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+		<div>
 		<iframe id="spot2" src="" width="250" height="90" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 		<iframe id="spot3" src="" width="250" height="90" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 		<iframe id="spot4" src="" width="250" height="90" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
@@ -73,7 +76,14 @@
  "https://open.spotify.com/embed/track/0AB5CTb04eqXnV9hEZx9FL",
   "https://open.spotify.com/embed/track/31G6jTLEpHwGs3vpQ7iUJM"];
 document.getElementById("spot1").src = songs1[Math.floor(Math.random() * 4) + 0];
-
+		
+		function thisVolume(volume_value) { 
+		var myvideo = document.getElementById("myvid"); 
+		document.getElementById("vol").innerHTML=volume_value; 
+		myvideo.volume = volume_value / 100; 
+		}
+		</script>
+		<script>
 var songs2 = [
 "https://open.spotify.com/embed/track/1BlqKx3JtMKY3K6F0uUbqW",
 "https://open.spotify.com/embed/track/7h2yzh9vIBxSBN3885QyQt",
