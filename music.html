@@ -69,7 +69,14 @@
 		function refresh() {
   alert("refresh the page if you want a new set of songs \n more songs will be added in the future");
 }
-
+		</script>
+		<script>
+function thisVolume(volume_value) { 
+		var myvideo = document.getElementById("spot1"); 
+		document.getElementById("vol").innerHTML=volume_value; 
+		myvideo.volume = volume_value / 100; 
+		}
+		
 		var songs1 = [
     "https://open.spotify.com/embed/track/1K9QXJtypYRMVrfHixmHh3",
  "https://open.spotify.com/embed/track/7clyJIrLkEbXUDwj1tC9zz", 
@@ -77,11 +84,7 @@
   "https://open.spotify.com/embed/track/31G6jTLEpHwGs3vpQ7iUJM"];
 document.getElementById("spot1").src = songs1[Math.floor(Math.random() * 4) + 0];
 		
-		function thisVolume(volume_value) { 
-		var myvideo = document.getElementById("myvid"); 
-		document.getElementById("vol").innerHTML=volume_value; 
-		myvideo.volume = volume_value / 100; 
-		}
+		
 		</script>
 		<script>
 var songs2 = [
